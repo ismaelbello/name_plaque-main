@@ -3,6 +3,7 @@ const userInput = document.querySelector('.field-input');
 const userLeterPreview = document.querySelector('.plaque-prev');
 const userPricePreview = document.querySelector('#plaquePrice');
 const buySubmit = document.querySelector('.buy-submit');
+const empty_message = document.getElementById('empty')
 
 
 // Refactoring with Arrow Function
@@ -19,20 +20,23 @@ userInput.oninput = (e)=>{
 // Arrow Function
 const buyNow =() => {
   if (userLeterPreview.textContent.replace(' ', '').length === 0){
-    alert("Enter your name")
+    empty_message.innerHTML = "Please enter your name";
+    empty_message.style.color = 'red';
   }
 
   else if (userLeterPreview.textContent === "Your Name"){
-    alert("Enter a new text")
+    empty_message.innerHTML = "Enter a new text";
+    empty_message.style.color = 'red';
   }
 
   else {
     if (userLeterPreview.textContent.replace(' ', '').length > 15){
-            alert("We have 15 letters left in stock, and you have exceeded the limit")
+            empty_message.innerHTML = "We have 15 letters left in stock, and you have exceeded the limit";
           }
           
           else{
-            alert("Success")
+            empty_message.innerHTML = "Success!!!";
+            empty_message.style.color = 'green';
           }
         }
       }

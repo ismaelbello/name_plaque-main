@@ -23,6 +23,11 @@ body {
   /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1); */
   position: relative;
 }
+
+#empty{
+  font-size: 16px;
+}
+
 .form{
   margin-top: 25px;
 }
